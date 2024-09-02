@@ -1,0 +1,53 @@
+Gitbash コマンド
+
+ユーザ名の登録
+git config --global user.name "narata25"
+
+メールアドレスの登録
+git config --global user.email "ms.narata@kkdis.co.jp"
+
+ディレクトリ移動
+cd C:\システム開発演習
+
+gitリポジトリへの追加
+git init
+
+ディレクトリ一覧表示
+ls -al
+
+暗号化キーの作成
+ssh-keygen -t rsa -C "ms.narata@kkdis.co.jp"
+
+GitHubに接続
+ssh -T git@github.com
+
+ローカルリポジトリへの追加
+git add .
+git commit
+
+initial commit
+"esc" + :wq
+
+git remote add origin https://github.com/narata25/dev.git
+
+git push -u origin master
+
+
+☆再度お願い
+　要件定義の成果物ができたら、
+　まず、GitBashで「cd c:\システム開発演習」コマンドを実行して、
+　①「git add .」コマンドを実行
+　②「git commit」コマンドを実行
+　③「git push -u origin master（main）」コマンドを作成実行
+　要件定義の成果物が金曜日の業務時間内に
+　できなかった場合
+　金曜日17:30時点で、
+　まず、GitBashで「cd c:\システム開発演習」コマンドを実行して、
+　①「git add .」コマンドを実行
+　②「git commit」コマンドを実行
+　③「git push -u origin master（main）」コマンドを実行
+この作業を毎週お願いいたします。
+ 
+※レビュー時間は来週改めてご連絡します。
+
+コンテキスト メニューあり
