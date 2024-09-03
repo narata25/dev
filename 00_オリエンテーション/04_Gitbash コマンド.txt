@@ -38,6 +38,8 @@ git push -u origin master
 　まず、GitBashで「cd c:\システム開発演習」コマンドを実行して、
 　①「git add .」コマンドを実行
 　②「git commit」コマンドを実行
+　→「i」を入力して、コメントを記述
+　→「:wq」で入力モードから離脱
 　③「git push -u origin master（main）」コマンドを作成実行
 　要件定義の成果物が金曜日の業務時間内に
 　できなかった場合
