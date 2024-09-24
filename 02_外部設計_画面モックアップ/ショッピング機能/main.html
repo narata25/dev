@@ -2,10 +2,11 @@
 	<head>
 		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
 		<title>商品検索</title>
-		<link rel='stylesheet' type='text/css' href='style.css' />
+		<link rel='stylesheet' type='text/css' href='style_test.css' />
 	</head>
 	<body>
 		<h3>商品の検索を行います。</h3>
+		ここにエラーメッセージを表示します。
 		<br />
 		<form action='searchResult.html' method='POST'>
 			キーワード<br />
@@ -23,5 +24,8 @@
 		<a href='login.html'>ログイン</a><br /><br />
 		※ログイン済の場合には以下を表示<br />
 		<a href='updateUser.html'>会員情報の変更</a><br />
+		<form action="login.html">
+			<input type="submit" value="ログアウト" id="toHyperlink">
+		</form>
 	</body>
 </html>
