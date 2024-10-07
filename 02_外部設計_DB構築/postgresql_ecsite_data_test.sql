@@ -1,9 +1,4 @@
-
-DROP DATABASE IF EXISTS ecsite;
-DROP USER IF EXISTS ecsite;
-
-CREATE USER ecsite WITH PASSWORD 'ecsite' CREATEDB;
-CREATE DATABASE ecsite WITH OWNER=ecsite ENCODING='UTF8';
+\encoding UTF8;
 
 CREATE SEQUENCE SEQ_CAT_CATID;
 CREATE SEQUENCE SEQ_ITEMS_ITEMID;
@@ -17,7 +12,7 @@ ALTER SEQUENCE public.SEQ_PUR_DETAIL_ID OWNER TO ecsite;
 
 CREATE TABLE users (
 	user_id		VARCHAR(255)	PRIMARY KEY,
-	password	VARCHAR(256)		NOT NULL,
+	password	VARCHAR(255)		NOT NULL,
 	user_name		VARCHAR(32),
 	address		VARCHAR(255)
 );
@@ -79,5 +74,13 @@ CREATE TABLE administrators (
 	admin_name			VARCHAR(32)
 );
 ALTER TABLE public.administrators OWNER TO ecsite;
+
+INSERT INTO categories (category_id,category_name) VALUES (0, 'すべて');
+INSERT INTO categories (category_id,category_name) VALUES (1, '帽子');
+INSERT INTO categories (category_id,category_name) VALUES (2, '鞄');
+
+INSERT INTO items (item_id, item_name, manufacturer, category_id, color, price, stock, recommended) VALUES (1, 'あいうえお', 'アイウエオ', 1, 'ABCDE', 1000, 10, FALSE);
+INSERT INTO items (item_id, item_name, manufacturer, category_id, color, price, stock, recommended) VALUES (2, 'かきくけこ', 'カキクケコ', 2, 'FGHIJ', 2000, 20, TRUE);
+INSERT INTO items (item_id, item_name, manufacturer, category_id, color, price, stock, recommended) VALUES (3, 'さしすせそ', 'サシスセソ', 1, 'KLMNO', 3000, 30, FALSE);
 
 
