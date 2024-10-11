@@ -82,5 +82,9 @@ INSERT INTO categories (category_id,category_name) VALUES (2, '鞄');
 INSERT INTO items (item_id, item_name, manufacturer, category_id, color, price, stock, recommended) VALUES (1, 'あいうえお', 'アイウエオ', 1, 'ABCDE', 1000, 10, FALSE);
 INSERT INTO items (item_id, item_name, manufacturer, category_id, color, price, stock, recommended) VALUES (2, 'かきくけこ', 'カキクケコ', 2, 'FGHIJ', 2000, 20, TRUE);
 INSERT INTO items (item_id, item_name, manufacturer, category_id, color, price, stock, recommended) VALUES (3, 'さしすせそ', 'サシスセソ', 1, 'KLMNO', 3000, 30, FALSE);
+INSERT INTO items (item_id, item_name, manufacturer, category_id, color, price, stock, recommended) VALUES (4, 'いうえおあ', 'アウオイエ', 2, 'DEACB', 4000, 40, TRUE);
+INSERT INTO items (item_id, item_name, manufacturer, category_id, color, price, stock, recommended) VALUES (5, 'かこきくけ', 'ケコクキカ', 1, 'FJIGH', 5000, 50, FALSE);
+INSERT INTO items (item_id, item_name, manufacturer, category_id, color, price, stock, recommended) VALUES (6, 'すせしそさ', 'サスシソセ', 2, 'MONKL', 6000, 60, TRUE);
+
 
 
