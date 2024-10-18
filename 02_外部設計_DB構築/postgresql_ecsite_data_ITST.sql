@@ -93,7 +93,7 @@ INSERT INTO items (item_id, item_name, manufacturer, category_id, color, price, 
 INSERT INTO items (item_id, item_name, manufacturer, category_id, color, price, stock, recommended) VALUES (11, 'ブリーフケース', 'THROW', 2, 'ダークグレー', 9800, 24, TRUE);
 INSERT INTO items (item_id, item_name, manufacturer, category_id, color, price, stock, recommended) VALUES (12, 'クラッチバッグ', 'THROW', 2, 'パール', 28700, 4, FALSE);
 INSERT INTO items (item_id, item_name, manufacturer, category_id, color, price, stock, recommended) VALUES (13, 'がま口バッグ', '革本', 2, '朱色', 2640, 9, FALSE);
-INSERT INTO items (item_id, item_name, manufacturer, category_id, color, price, stock, recommended) VALUES (14, 'カジュアルトートバック', 'UNIGUE', 2, 'アイボリー', 1680, 48, TRUE);
+INSERT INTO items (item_id, item_name, manufacturer, category_id, color, price, stock, recommended) VALUES (14, 'カジュアルトートバッグ', 'UNIGUE', 2, 'アイボリー', 1680, 48, TRUE);
 INSERT INTO items (item_id, item_name, manufacturer, category_id, color, price, stock, recommended) VALUES (15, 'アタッシュケース', 'Dural', 2, 'シルバー', 4680, 8, FALSE);
 
 
