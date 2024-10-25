@@ -1,0 +1,96 @@
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="f"%>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+		<title><c:out value="検索結果"/></title>
+		<link rel='stylesheet' type='text/css' href='style.css' />
+	</head>
+	<body>
+		<h3 id="title"><c:out value='キーワード "${rawKeyword}" カテゴリ "${categoryName}" の検索結果'/></h3>
+		<div id="error">
+			<c:out value="${error}"/>
+		</div>
+		<div id="zeroResult">
+			<c:if test="${f:length(items) <= 0}">
+				<c:out value="検索結果が0件でした。"/>
+			</c:if>
+		</div>
+		<c:if test="${f:length(items) > 0}">
+			<table>
+				<tr>
+					<th id="itemNameTag"><c:out value="商品名" /></th>
+					<th id="colorTag"><c:out value="商品の色" /></th>
+					<th id="manufacturerTag"><c:out value="メーカー名" /></th>
+					<th id="priceTag"><c:out value="価格" /></th>
+				</tr>
+				<c:forEach var="items" items="${splitedList}">
+					<c:if test="${items.stock > 0}">
+						<tr>
+							<td id="itemName">
+								<form action="/ecsite/item_detail" method="POST">
+									<input type="hidden" name="itemId" value="${items.itemId}">
+									<input type="submit" value="${items.itemName}" class="toHyperlink">
+									<sup id="recommended">
+										<c:if test="${items.recommended}">
+											<c:out value="オススメ!" />
+										</c:if>
+									</sup>
+								</form>
+							</td>
+							<td id="color"><c:out value="${items.color}"/></td>
+							<td id="manufacturer"><c:out value="${items.manufacturer}"/></td>
+							<td id="price"><c:out value="${items.price}円"/></td>
+						</tr>
+					</c:if>
+				</c:forEach>
+			</table>
+			<br />
+			<form action="/ecsite/search_result" method="GET">
+				<c:if test="${end == 1}">
+					<c:out value="前へ 1 次へ"/>
+				</c:if>
+				<c:if test="${end > 1}">
+					<span id="previous">
+						<c:choose>
+							<c:when test="${now == 1}">
+								<c:out value="前へ"/>
+							</c:when>
+							<c:when test="${now > 1}">
+								<input type="submit" name="requested" value="前へ" class="toHyperlink">
+							</c:when>
+						</c:choose>
+					</span>
+					<span id="page">
+						<c:forEach var="pageNum" begin="1" end="${end}">
+							<c:choose>
+								<c:when test="${now == pageNum}">
+									<c:out value="${pageNum}"/>
+								</c:when>
+								<c:when test="${now != pageNum}">
+									<input type="submit" name="requested" value="${pageNum}" class="toHyperlink">
+								</c:when>
+							</c:choose>
+						</c:forEach>
+					</span>
+					<span id="next">
+						<c:choose>
+							<c:when test="${now == end}">
+								<c:out value="次へ"/>
+							</c:when>
+							<c:when test="${now < end}">
+								<input type="submit" name="requested" value="次へ" class="toHyperlink">
+							</c:when>
+						</c:choose>
+					</span>
+				</c:if>
+			</form>
+		</c:if>
+		<a href="/ecsite/main" id="main"><c:out value="商品検索へ"/></a>
+	</body>
+</html>
+

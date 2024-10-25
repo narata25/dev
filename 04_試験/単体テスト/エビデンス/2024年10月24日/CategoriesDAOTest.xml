@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="CategoriesDAOTest (1)" project="ecsite" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="com.bh.ecsite.junit.CategoriesDAOTest" time="0.666" displayname="CategoriesDAOTest" uniqueid="[engine:junit-jupiter]/[class:com.bh.ecsite.junit.CategoriesDAOTest]">
+    <testcase name="selectAllTest01" classname="com.bh.ecsite.junit.CategoriesDAOTest" time="0.58" displayname="selectAllTest01()" uniqueid="[engine:junit-jupiter]/[class:com.bh.ecsite.junit.CategoriesDAOTest]/[method:selectAllTest01()]"/>
+    <testcase name="selectAllTest02" classname="com.bh.ecsite.junit.CategoriesDAOTest" time="0.086" displayname="selectAllTest02()" uniqueid="[engine:junit-jupiter]/[class:com.bh.ecsite.junit.CategoriesDAOTest]/[method:selectAllTest02()]"/>
+  </testsuite>
+</testrun>
