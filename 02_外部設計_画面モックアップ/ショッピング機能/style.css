@@ -39,3 +39,14 @@ input.password {
 	width: 200px;
 	ime-mode: disabled;
 }
+
+#toHyperlink{
+	padding: 0;
+	font-size: unset;
+	border: none;
+	background-color: transparent;
+	text-decoration: underline;
+	color: blue;
+}
+
+      

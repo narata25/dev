@@ -1,0 +1,1 @@
+5) LinkedHashSetクラスのコンストラクタで、resultの重複を削除する。
