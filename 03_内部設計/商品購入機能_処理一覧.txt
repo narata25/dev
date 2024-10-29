@@ -1,0 +1,81 @@
+
+【商品購入機能(購入) 処理一覧】
+《商品詳細表示画面》
+・「ショッピングカートに入れる」ボタンを押下したとき、画面に表示されている商品の商品IDと数量を送信する。
+　→CartServletのdoPostメソッド
+
+《ショッピングカート一覧画面》
+・初期表示の際、会員ログインが済んでいなければ、LoginServletに転送する。
+　→CartServletのdoPostメソッド
+　→ログインに成功した場合、CartServletに転送する。
+　※ログイン機能がないため、ダミーのユーザーを用意する？
+
+・カート内商品の取得に失敗したとき、エラーメッセージを表示する。
+　→CartServletのdoGetメソッド
+
+・DBから取得した、カート内商品の情報を表示する。
+　→CartServletのdoGetメソッド
+　→CartService
+　→ItemsInCartDAOクラス
+　→購入確認画面でもデータを使用するため、セッションオブジェクトに保存する。
+　商品名
+　商品の色
+　メーカー名
+　単価
+　数量
+　→SQL文
+　　SELECT user_id, item_id, manufacturer, (category_id, )color, price, amount
+　　 FROM items_in_cart AS IIS INNER JOIN items AS I ON IIC.item_id = I.item_id
+　　 WHERE user_id = ?;
+
+・合計金額を表示する。
+　→cart.jsp
+(合計金額) = (単価) * (数量)
+
+・「購入する」ボタンが押下されたとき、購入確認画面に遷移する。
+　→PurchaseConfirmServletのdoGetメソッド
+
+・リンク「商品検索へ」をクリックしたとき、商品検索画面に遷移する。
+　→MainServletのdoGetメソッド
+
+
+《購入確認画面》
+・購入処理に失敗したとき、エラーメッセージを表示する。
+　→PurchaseCommitServletのdoPost
+
+・カート内商品の情報を表示する。
+　→PurchaseConfirmServletのdoGet
+　→セッションオブジェクトから取得する
+　商品名
+　商品の色
+　メーカー名
+　単価
+　数量
+
+・合計金額を表示する。
+　→purchase_confirm.jsp
+(合計金額) = (単価) * (数量)
+
+・「購入する」ボタンが押下されたとき、購入処理を行う。
+　→PurchaseCommitServletのdoPost
+　→処理に成功した場合、購入完了画面に遷移する。
+　→処理に失敗した場合、画面遷移は行わず、エラーメッセージを表示する。
+
+・リンク「商品検索へ」をクリックしたとき、商品検索画面に遷移する。
+　→MainServletのdoGetメソッド
+
+
+《購入完了画面》
+・カート内商品の情報を表示する。
+　→PurchaseCommitServletのdoGet
+　→セッションオブジェクトから取得する
+　商品名
+　商品の色
+　メーカー名
+　単価
+　数量
+
+・リンク「商品検索へ」をクリックしたとき、商品検索画面に遷移する。
+　→MainServletのdoGetメソッド
+
+
